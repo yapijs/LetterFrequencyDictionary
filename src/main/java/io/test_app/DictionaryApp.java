@@ -2,25 +2,20 @@ package io.test_app;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Arrays;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DictionaryApp {
     public static void main(String[] args) throws URISyntaxException, IOException {
-//        try {
-//            FileReader fileReader = new FileReader();
-//        } catch (URISyntaxException e) {
-//            System.out.println(e.getMessage());
-//        } catch (NullPointerException e) {
-//            System.out.println("Input file not found!");
-//        }
 
         FileReader fileReader = new FileReader();
-        System.out.println(getCharacterMap(fileReader.getTextFromFile()));
-
-
+        Map<Character, Integer> mappedCharacters = getCharacterMap(fileReader.getTextFromFile());
+        FileWriter fileWriter = new FileWriter();
+        fileWriter.writeDataToFile(mappedCharacters);
 
     }
 
