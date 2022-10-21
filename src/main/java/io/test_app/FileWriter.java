@@ -1,8 +1,6 @@
 package io.test_app;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.*;
 import java.util.Map;
 
@@ -10,8 +8,7 @@ public class FileWriter {
     private final String FILE_NAME = "output.txt";
     private Path path;
 
-    public FileWriter() throws URISyntaxException {
-        //this.path = Paths.get(getClass().getClassLoader().getResource(FILE_NAME).toURI());
+    public FileWriter() {
         this.path = Paths.get("src/main/resources", FILE_NAME);
     }
 
