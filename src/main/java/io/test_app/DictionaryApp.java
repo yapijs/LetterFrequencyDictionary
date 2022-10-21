@@ -15,7 +15,7 @@ public class DictionaryApp {
             FileWriter fileWriter = new FileWriter();
             fileWriter.writeDataToFile(mappedCharacters);
         } catch (URISyntaxException | IOException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
 
     }
